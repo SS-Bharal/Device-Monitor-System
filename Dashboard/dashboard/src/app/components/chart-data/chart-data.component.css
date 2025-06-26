@@ -1,0 +1,6 @@
+.fm {
+  display: flex;
+  align-items: revert;
+  justify-content: center;
+  margin: 10px 500px;
+}

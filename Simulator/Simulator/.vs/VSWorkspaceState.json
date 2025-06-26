@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Simulator",
+    "\\Simulator\\Interfaces",
+    "\\Simulator\\Models"
+  ],
+  "SelectedNode": "\\Simulator\\Interfaces\\IGetDataService.cs",
+  "PreviewInSolutionExplorer": false
+}

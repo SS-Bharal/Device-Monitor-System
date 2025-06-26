@@ -1,0 +1,50 @@
+## Build Folders
+bin/
+obj/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Visual Studio
+.vscode/
+.vs/
+
+## Rider
+.idea/
+
+## OS-specific files
+.DS_Store
+Thumbs.db
+
+## Package directories
+packages/
+*.nupkg
+
+## Logs
+*.log
+
+## Dotnet environment
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## ASP.NET temp files
+**/wwwroot/dist/
+**/wwwroot/node_modules/
+
+## Entity Framework
+*.dbmdl
+*.jfm
+
+## Secrets
+secrets.json
+.env
+
+## Others
+_ReSharper*/
+*.DotSettings.user
+*.sql
+*.bak

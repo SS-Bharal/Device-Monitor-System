@@ -1,0 +1,15 @@
+<mat-sidenav-container >
+  <mat-toolbar color="primary">
+    <span (click)="changeRoute()" style="cursor:pointer;">Dashboard</span>
+    <br />
+
+    <div style=" margin-left:50px;">
+      <button (click)="changeCreate()" mat-raised-button color="accent">Register Device</button>
+    </div>
+    <div class="comp">
+      <button (click)="changeRoute()" mat-raised-button color="accent">Display Data in Table </button>
+      <button (click)="changeRoute2()" mat-raised-button color="accent">Display Data in Chart </button>
+    </div>
+    
+  </mat-toolbar>
+</mat-sidenav-container>

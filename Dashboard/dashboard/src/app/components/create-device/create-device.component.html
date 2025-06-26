@@ -1,0 +1,149 @@
+<app-navbar></app-navbar>
+
+<!--<div class="box">
+
+  <form [formGroup]="deviceForm" (ngSubmit)="onSubmit()">
+
+    <h1 class="text-center"> Add new Device</h1>
+    <div class="form-group">
+      <label for="deviceCode">Device Code:</label>
+      <input type="text" id="deviceCode" formControlName="deviceCode">
+    </div>
+
+    <div class="form-group">
+      <label for="deviceName">Device Name:</label>
+      <input type="text" id="deviceName" formControlName="deviceName">
+    </div>
+
+    <div class="form-group">
+      <label for="alarmInterval">Alarm Interval (seconds):</label>
+      <input type="number" id="alarmInterval" formControlName="alarmInterval">
+    </div>
+
+    <div class="form-group">
+      <label>Alarm Type:</label>
+      <div *ngFor="let option of alarmTypes">
+        <input type="checkbox" [id]="option" [value]="option" formControlName="alarmTypes"> {{ option }}
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="deviceForm.invalid">Submit</button>
+  </form>
+
+</div>-->
+
+
+<!--<div class="box">
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="deviceForm">
+
+    <h1 class="text-center">Create Device</h1>
+    <mat-form-field>
+      <input matInput formControlName="deviceName" placeholder="Device Name" required>
+      <mat-error *ngIf="deviceForm.get('deviceName')?.hasError('required')">Device Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="deviceCode" placeholder="Device Code" required>
+      <mat-error *ngIf="deviceForm.get('deviceCode')?.hasError('required')">Device Code is required</mat-error>
+    </mat-form-field>
+
+    <input type="datetime-local" id="startTime" formControlName="startTime" class="form-control" />
+    <br />
+    <br />
+    <input type="datetime-local" id="endTime" formControlName="endTime" class="form-control" />
+
+    <button mat-raised-button color="primary" [disabled]="deviceForm.invalid">Submit</button>
+  </form>
+
+</div>
+{{deviceForm.value | json}}-->
+
+<!--BootStrap navbar-->
+<!--<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>-->
+
+<div class="container">
+  <br />
+  <h1>Create Device</h1>
+
+  <form [formGroup]="deviceForm" (ngSubmit)="onSubmit()" class="mt-4">
+    <div class="form-group">
+      <label for="deviceCode">Device Code:</label>
+      <input type="text" id="deviceCode" formControlName="deviceCode" class="form-control">
+    </div>
+
+    <br />
+
+    <div class="form-group">
+      <label for="deviceName">Device Name:</label>
+      <input type="text" id="deviceName" formControlName="deviceName" class="form-control">
+    </div>
+
+    <br />
+
+    <div class="form-group">
+      <label for="alarmInterval">Alarm Interval (seconds):</label>
+      <input type="number" id="alarmInterval" formControlName="alarmInterval" class="form-control">
+    </div>
+
+    <br />
+
+    <!--<div class="form-group">
+    <label>Alarm Type:</label>
+    <div *ngFor="let option of alarmTypes" class="form-check">
+      <input type="checkbox" [id]="option" [value]="option" formControlName="alarmTypes" class="form-check-input"> {{ option }}
+    </div>
+  </div>-->
+
+    <p>Selected Devices: </p>
+
+    <div *ngFor="let deviceId of getDeviceStateKeys()">
+      <input type="checkbox"
+             [value]="deviceId"
+             [checked]="selectedDevices.includes(deviceId)"
+             (change)="onSelectDevice(deviceId)">
+      {{ deviceStates[deviceId] }}
+    </div>
+
+
+    <br />
+
+    <button type="submit" class="btn btn-primary" [disabled]="deviceForm.invalid || !isCheckboxSelected">Submit</button>
+  </form>
+</div>
+
